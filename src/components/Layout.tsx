@@ -1,16 +1,22 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <div>
-      <nav>
-        <Link to="/">Browse</Link>
-        <Link to="/about">How it works</Link>
-      </nav>
-
-      <div>
+      <header className="site-header">
+        <strong>Between Classes</strong>
+        <nav>
+          <NavLink to="/" end className={({ isActive }) => isActive ? "active" : ""}>
+            Browse
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
+            How it works
+          </NavLink>
+        </nav>
+      </header>
+      <main>
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };

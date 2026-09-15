@@ -1,0 +1,35 @@
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.about-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.about-card h3 {
+  margin-top: 0;
+}
+
+.about-card.dark {
+  background: var(--secondary);
+  color: white;
+}
+
+.about-card.amber {
+  background: var(--primary);
+  color: var(--foreground);
+}
+
+.about-card.light {
+  background: var(--muted);
+}
