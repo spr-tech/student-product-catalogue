@@ -1,7 +1,26 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Browse from "./pages/Browse";
+import ProductDetail from "./pages/ProductDetail";
+import About from "./pages/About";
 
-function App() {
-  return <h1>Between Classes</h1>;
-}
+const App = () => {
+  return (
+    <div>
+      <div>Header</div>
+
+      {/* routes */}
+      <div>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Browse />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
+      </div>
+    </div>
+  );
+};
 
 export default App;
